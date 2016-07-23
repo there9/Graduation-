@@ -1,0 +1,19 @@
+﻿빌드 시작: 2016-01-18 오후 1:31:00
+     1>2 노드의 "C:\Users\HOME\Documents\Visual Studio 2010\Projects\20160114\20160114\20160114.vcxproj" 프로젝트(build 대상)입니다.
+     1>PrepareForBuild:
+         "C:\Users\HOME\Documents\Visual Studio 2010\Projects\20160114\Release\" 디렉터리를 만들고 있습니다.
+       InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Release\20160114.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\cvBlob.cpp ..\OpencvEx17.cpp ..\stdafx.cpp
+         cvBlob.cpp
+     1>c:\users\home\documents\visual studio 2010\projects\20160114\stdafx.h(17): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2\opencv.hpp': No such file or directory
+         OpencvEx17.cpp
+     1>c:\users\home\documents\visual studio 2010\projects\20160114\stdafx.h(17): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2\opencv.hpp': No such file or directory
+         stdafx.cpp
+     1>c:\users\home\documents\visual studio 2010\projects\20160114\stdafx.h(17): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2\opencv.hpp': No such file or directory
+     1>"C:\Users\HOME\Documents\Visual Studio 2010\Projects\20160114\20160114\20160114.vcxproj" 프로젝트를 빌드했습니다(build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:02.65
