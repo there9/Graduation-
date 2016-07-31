@@ -12,7 +12,9 @@ IplImage *frame_copy_for_line;//hsv
 IplImage *frame_detect_line;//변형
 Mat mat_src;
 Mat mat_dst;
-//CvCapture* capture = cvCaptureFromFile("carnumber1.mp4");//동영상 재생
+//CvCapture* capture = cvCaptureFromCAM(0);//동영상 재생
+
+//CvCapture* capture = cvCaptureFromFile("car1.mp4");//동영상 재생
 CvCapture* capture = cvCaptureFromFile("video3.h264");//동영상 재생
 	
 void main ()

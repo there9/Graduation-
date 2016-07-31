@@ -24,22 +24,21 @@ int find_board(IplImage *image_copy, IplImage *inlabeled){
 	IplImage* tempB = 0;
 	double min, max;
 
-	char total_CarNumber[10] = { '0' };
+	char total_CarNumber[20] = { '0' };
 
 	
+	cvCvtColor(image_copy, inlabeled, CV_GRAY2BGR);
+	IplImage* roiImage = (IplImage*)cvClone(inlabeled);
 
 	CBlobLabeling inblob;
 	inblob.SetParam(image_copy, 40);
 	inblob.DoLabeling();
-	cvCvtColor(image_copy, inlabeled, CV_GRAY2BGR);
-	IplImage* roiImage = (IplImage*)cvClone(inlabeled);
-
-	inblob.BlobBigSizeConstraint(60, 80);
-	inblob.BlobSmallSizeConstraint(9, 18);
+	inblob.BlobBigSizeConstraint(60,70);
+	inblob.BlobSmallSizeConstraint(5, 5);
 	inblob.Blob_X_SmallSort();
-	if (inblob.m_nBlobs>4 && inblob.m_nBlobs<10)
+	if (inblob.m_nBlobs > 5 && inblob.m_nBlobs < 20)
 	{
-		
+		cvShowImage("abc", roiImage);
 		IplImage* temp_Number[10], *pResizeImg[10], *Number[10];
 		temp_Number[9] = cvLoadImage("nine.png", 0);
 		temp_Number[8] = cvLoadImage("eight.png", 0);
@@ -54,19 +53,20 @@ int find_board(IplImage *image_copy, IplImage *inlabeled){
 
 		Templete_Binary_Conver(temp_Number, Number);
 
-
-		for (int j = 0; j<inblob.m_nBlobs; j++)
+		IplImage *capture_resize;
+		for (int j = 0; j < inblob.m_nBlobs; j++)
 		{
 			// inblob get
 			CvPoint inpt1 = cvPoint(inblob.m_recBlobs[j].x, inblob.m_recBlobs[j].y);
 			CvPoint inpt2 = cvPoint(inpt1.x + inblob.m_recBlobs[j].width, inpt1.y + inblob.m_recBlobs[j].height);
-			cvDrawRect(inlabeled, inpt1, inpt2, cvScalar(0, 0, 255), 2);
+			cvDrawRect(inlabeled, inpt1, inpt2, cvScalar(0, 255, 0), 2);
+			cvShowImage("cam123", inlabeled);
 			//관심영역을 사각형 모양으로 자르는 함수
 
 			CvRect tempRect = cvRect(inblob.m_recBlobs[j].x - 2, inblob.m_recBlobs[j].y - 2, inblob.m_recBlobs[j].width + 4, inblob.m_recBlobs[j].height + 4);
-			IplImage *capture_resize = Roi_Image_Cut(roiImage, tempRect);
+			capture_resize = Roi_Image_Cut(roiImage, tempRect);
 			//템플릿 숫자 get
-			for (int i = 0; i<10; i++)
+			for (int i = 0; i < 10; i++)
 			{
 				pResizeImg[i] = cvCreateImage(cvSize(inblob.m_recBlobs[j].width, inblob.m_recBlobs[j].height), 8, 3);
 				cvResize(Number[i], pResizeImg[i]);
@@ -76,19 +76,23 @@ int find_board(IplImage *image_copy, IplImage *inlabeled){
 				templete_similar_arr[i] = max;
 			}
 			total_CarNumber[j] = numberChar[numberTopSame(templete_similar_arr)];
-			for (int k = 0; k<10; k++)
+
+
+			for (int k = 0; k < 10; k++)
 			{
 				cvReleaseImage(&pResizeImg[k]);
 			}
 
 		}
-		for (int i = 0; i<10; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			cvReleaseImage(&Number[i]);
 			cvReleaseImage(&temp_Number[i]);
 		}
+		cvReleaseImage(&capture_resize);
 	}
 	cvReleaseImage(&tempB);
+	cvReleaseImage(&roiImage);
 	
 	return CarNumberResult(total_CarNumber, inblob.m_nBlobs);
 }

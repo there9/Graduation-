@@ -19,20 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\stdafx.h" />
-    <ClInclude Include="..\targetver.h" />
     <ClInclude Include="bloblabeling.h" />
-    <ClInclude Include="line.h" />
     <ClInclude Include="CarInfo.h" />
+    <ClInclude Include="line.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\stdafx.cpp" />
-    <ClCompile Include="BlobLabeling.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\원앙\BlobLabeling.cpp" />
     <ClCompile Include="FindCarMoudle.cpp" />
     <ClCompile Include="HaarDetected.cpp" />
     <ClCompile Include="line.cpp" />
     <ClCompile Include="NumberMoudle.cpp" />
     <ClCompile Include="play.cpp" />
+    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F17096D0-1998-4917-ACF5-75F394056665}</ProjectGuid>

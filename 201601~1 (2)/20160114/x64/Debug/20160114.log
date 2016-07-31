@@ -1,0 +1,20 @@
+﻿빌드 시작: 2016-07-31 오전 1:55:04
+     1>2 노드의 "C:\Users\MCN\Documents\카카오톡 받은 파일\201601~1 (2)\20160114\20160114.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\VC\bin\x86_amd64\CL.exe /c /IC:\opencv\build\include /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt HaarDetected.cpp
+         HaarDetected.cpp
+     1>c:\users\mcn\documents\카카오톡 받은 파일\201601~1 (2)\20160114\CarInfo.h(12): warning C4091: 'typedef ' : 변수를 선언하지 않으면 'ReturnCar' 왼쪽은 무시됩니다.
+       Link:
+         C:\Program Files (x86)\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MCN\Documents\카카오톡 받은 파일\201601~1 (2)\x64\Debug\20160114.exe" /NOLOGO /LIBPATH:C:\opencv\build\x64\vc12\lib opencv_calib3d249d.lib opencv_contrib249d.lib opencv_core249d.lib opencv_features2d249d.lib opencv_flann249d.lib opencv_gpu249d.lib opencv_highgui249d.lib opencv_imgproc249d.lib opencv_legacy249d.lib opencv_ml249d.lib opencv_nonfree249d.lib opencv_objdetect249d.lib opencv_ocl249d.lib opencv_photo249d.lib opencv_stitching249d.lib opencv_superres249d.lib opencv_ts249d.lib opencv_video249d.lib opencv_videostab249d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\MCN\Documents\카카오톡 받은 파일\201601~1 (2)\x64\Debug\20160114.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MCN\Documents\카카오톡 받은 파일\201601~1 (2)\x64\Debug\20160114.lib" /MACHINE:X64 /machine:x64 x64\Debug\BlobLabeling.obj
+         x64\Debug\FindCarMoudle.obj
+         x64\Debug\HaarDetected.obj
+         x64\Debug\line.obj
+         x64\Debug\NumberMoudle.obj
+         x64\Debug\play.obj
+         x64\Debug\stdafx.obj
+         20160114.vcxproj -> C:\Users\MCN\Documents\카카오톡 받은 파일\201601~1 (2)\x64\Debug\20160114.exe
+     1>"C:\Users\MCN\Documents\카카오톡 받은 파일\201601~1 (2)\20160114\20160114.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:01.28
